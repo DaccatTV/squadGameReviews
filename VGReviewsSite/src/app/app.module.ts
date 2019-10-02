@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+import { AlertModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -18,11 +21,13 @@ import { BrowsepageComponent } from './browsepage/browsepage.component';
     MoviepageComponent,
     BrowsepageComponent
   ],
-  imports: [
+
+  imports: [AlertModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
