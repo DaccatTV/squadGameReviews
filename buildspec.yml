@@ -6,6 +6,7 @@ phases:
       commands:
       - npm install -g @angular/cli
       - npm install --save-dev @angular-devkit/build-angular
+      - npm install ngx-bootstrap bootstrap --save
     build:
       commands:
         - cd VGReviewsSite
