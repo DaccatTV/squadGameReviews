@@ -12,4 +12,24 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  rUsername :string;
+  rPassword :string;
+  rConfirmPassword :string;
+
+  checkRegister() {
+    if (this.rUsername == '') {
+      return false;
+    }
+    if (this.rPassword == '') {
+      return false;
+    }
+    if (this.rConfirmPassword == '') {
+      return false;
+    }
+
+    if (this.rPassword != this.rConfirmPassword) {
+      return false;
+    }
+  }
+
 }

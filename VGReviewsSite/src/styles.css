@@ -29,6 +29,7 @@ body {
     border: none;
     border-radius: 4px;
     margin: 4px 4px;
+    height: 28px;
   }
   
   .selectdiv select {
@@ -36,19 +37,19 @@ body {
     -moz-appearance: none;
     appearance: none;
     
+    border-radius: 4px;
     outline: 0;
     background-color: #666;
     border: none;
     display: block;
-    top: 0px;
+    top: 2px;
     width: 100%;
     max-width: 320px;
-    height: 30px;
+    height: 20px;
     float: right;
     margin: 0px 0px;
-    padding: 0px 18px 10px 0px;
+    padding: 0px 18px 0px 0px;
     font-size: 16px;
-    line-height: 1.75;
     color: #FFF;
     background-image: none;
     -ms-word-break: normal;
@@ -59,8 +60,8 @@ body {
       content: '\2304';
       color: #ffffff;
       right: 6px;
-      top: 2px;
-      height: 34px;
+      top: -4px;
+      height: 14px;
       padding: 0px 0px 0px 0px;
       position: absolute;
       pointer-events: none;
@@ -77,6 +78,7 @@ body {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 4px;
   }
   
   input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
@@ -84,14 +86,12 @@ body {
   }
   input::-moz-focus-inner { 
     outline: 0;
-    border: 10; 
     background-color: #F66;
-    border-color: #AAF
   }
   input[type=button]:focus, input[type=submit]:focus, input[type=reset]:focus, input[type=button]:active, input[type=submit]:active, input[type=reset]:active{
     outline: 0;
     background-color: #F66;
-    border: 10px;
+    border: 10;
     border-color: #AAF
   }
   
