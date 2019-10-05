@@ -3,3 +3,9 @@ div.logindiv, table{
     margin-left: auto;
     margin-right: auto;
 }
+
+table{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
