@@ -12,4 +12,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  rUsername :string;
+  rPassword :string;
+
+  checkRegister() {
+    if (this.rUsername == '') {
+      return false;
+    }
+    if (this.rPassword == '') {
+      return false;
+    }
+  }
+
 }

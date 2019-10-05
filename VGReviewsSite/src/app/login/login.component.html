@@ -1,1 +1,13 @@
-<p>login works!</p>
+<form action="" method="get" onSubmit="return checkLogin()">
+    <table>
+        <tr>
+            <td><label>Username:</label></td>
+            <td><input type="text" name="username" maxlength="20" [(ngModel)] = "rUsername"/></td>
+        </tr>
+        <tr>
+            <td><label>Password:</label></td>
+            <td><input type="password" name="password" maxlength="20" [(ngModel)] = "rPassword"/></td>
+        </tr>
+    </table>
+    <input type="submit"/>
+</form>
