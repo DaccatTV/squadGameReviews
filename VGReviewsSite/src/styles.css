@@ -67,6 +67,7 @@ body {
       pointer-events: none;
   }
   
+  
   select::-ms-expand {
   display: none;
   }
