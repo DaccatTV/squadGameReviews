@@ -1,5 +1,11 @@
 package com.revature.repos;
 
-public class MessagesRepo {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.revature.models.Messages;
+
+@Repository
+public interface MessagesRepo extends CrudRepository<Messages, Integer>{ 
 
 }
