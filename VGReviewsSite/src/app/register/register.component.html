@@ -1,19 +1,17 @@
-<div class="registerdiv">
-    <form action="" method="post" onSubmit="return checkRegister()">
-        <table>
-            <tr>
-                <td><label>Username:</label></td>
-                <td><input type="text" name="username" maxlength="20" [(ngModel)] = "rUsername"/></td>
-            </tr>
-            <tr>
-                <td><label>Password:</label></td>
-                <td><input type="text" name="password" maxlength="20" [(ngModel)] = "rPassword"/></td>
-            </tr>
-            <tr>
-                <td><label>Confirm Password:</label></td>
-                <td><input type="text" name="confirmpass" maxlength="20" [(ngModel)] = "rConfirmPassword"/></td>
-            </tr>
-        </table>
-        <input type="submit"/>
-    </form>
-</div>
+<form action="" method="post" onSubmit="return checkRegister()">
+    <table>
+        <tr>
+            <td><label>Username:</label></td>
+            <td><input type="text" name="username" maxlength="20" [(ngModel)] = "rUsername"/></td>
+        </tr>
+        <tr>
+            <td><label>Password:</label></td>
+            <td><input type="password" name="password" maxlength="20" [(ngModel)] = "rPassword"/></td>
+        </tr>
+        <tr>
+            <td><label>Confirm Password:</label></td>
+            <td><input type="password" name="confirmpass" maxlength="20" [(ngModel)] = "rConfirmPassword"/></td>
+        </tr>
+    </table>
+    <input type="submit"/>
+</form>
