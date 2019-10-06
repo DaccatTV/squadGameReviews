@@ -1,5 +1,11 @@
 package com.revature.repos;
 
-public class ConsoleRepo {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.revature.models.Console;
+
+@Repository
+public interface ConsoleRepo extends CrudRepository<Console, Integer> {
 
 }
