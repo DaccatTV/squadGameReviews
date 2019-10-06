@@ -37,7 +37,7 @@ public class AccountController {
 		return as.getAccountsById(id);
 	}
 	
-	@GetMapping(value = "/accounts/{u_name}")
+	@GetMapping(value = "/accounts/username/{u_name}")
 	public Accounts getAccountsById(@PathVariable("u_name")String name) {
 		return as.getAccountsByName(name);
 	}
