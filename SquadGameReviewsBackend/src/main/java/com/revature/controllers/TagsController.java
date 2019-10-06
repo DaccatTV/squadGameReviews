@@ -22,7 +22,7 @@ public class TagsController {
 	TagsService ts;
 	
 	@RequestMapping(value = "/tags", method = RequestMethod.GET)
-	public List<Tags> getAllGames(){
+	public List<Tags> getAllTags(){
 		
 		return ts.getAllTags();
 	}
