@@ -42,11 +42,11 @@ public class Accounts {
 		this.status = status;
 	}
 
-	public int getU_id() {
+	public int getA_id() {
 		return a_id;
 	}
 
-	public void setU_id(int u_id) {
+	public void setA_id(int a_id) {
 		this.a_id = a_id;
 	}
 
