@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.revature.models.Accounts;
+import com.revature.models.Forums;
 import com.revature.repos.AccountRepo;
 
 @Service
@@ -25,7 +26,17 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public Accounts getAccountsByName(String name) {
-		// TODO Auto-generated method stub
+		List<Accounts> accountList = getAllAccounts();
+		
+		for(Accounts element : accountList) {
+			
+			if(name.equalsIgnoreCase(element.getUsername())){
+					
+				return element;
+			}
+				
+		}
+		
 		return null;
 	}
 

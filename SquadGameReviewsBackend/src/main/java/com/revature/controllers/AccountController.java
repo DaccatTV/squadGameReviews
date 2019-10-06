@@ -37,6 +37,11 @@ public class AccountController {
 		return as.getAccountsById(id);
 	}
 	
+	@GetMapping(value = "/accounts/{u_name}")
+	public Accounts getAccountsById(@PathVariable("u_name")String name) {
+		return as.getAccountsByName(name);
+	}
+	
 	
 	@RequestMapping(value = "/accounts", method = RequestMethod.PUT, consumes="application/json")
 	public void updateAccounts(@RequestBody Accounts accounts) {
