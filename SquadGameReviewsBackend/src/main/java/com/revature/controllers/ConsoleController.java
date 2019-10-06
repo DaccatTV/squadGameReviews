@@ -20,7 +20,7 @@ public class ConsoleController {
 	ConsoleService cs;
 	
 	@RequestMapping(value = "/console", method = RequestMethod.GET)
-	public List<Console> getAllAccounts(){
+	public List<Console> getAllConsole(){
 		
 		return cs.getAllConsole();
 	}
