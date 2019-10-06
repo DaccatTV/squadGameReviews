@@ -3,6 +3,121 @@ body {
     background-color: #222222;
     color: #ffffff
   }
+
+  div.logoback {
+    /*background-color: #f66;*/
+    /*color:-moz-linear-gradient(
+      top, 
+      rgba(255, 255, 255, 0.25), 
+      rgba(0, 0, 0, 0.25)
+    );*/
+    width: 100%;
+    margin-left: 0%;
+  margin-right: 0%;
+    padding: 6px 6px;
+    text-align: center;
+    background-image:
+      -moz-linear-gradient(
+        135deg, 
+        transparent 33%, 
+        rgba(0, 0, 0, 0.1) 33%, 
+        rgba(0, 0, 0, 0.1) 66%, 
+        transparent 66% 
+      ),
+      -moz-linear-gradient(
+        top, 
+        rgba(255, 255, 255, 0.25), 
+        rgba(0, 0, 0, 0.25)
+      ),
+      -moz-linear-gradient(
+        bottom, 
+        #a22, 
+        #f66
+      );
+  background-size: 100% 100%, 100% 100%, 100% 100%;
+  font-family: "Impact", Impact, Monospace;
+} 
+
+h1.logo {
+  width: 375px;
+  margin-left: auto ;
+  margin-right: auto ;
+  background-image:
+  -webkit-linear-gradient(
+        top, 
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.25), 
+        rgba(0, 0, 0, 0.25)
+      ),
+      -webkit-linear-gradient(
+        bottom, 
+        #ccc, 
+        #aaa
+      );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position:relative;
+  z-index: 2;
+  font-size: 400%;
+}
+
+router-outlet{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div .selecttable {
+  border-radius: 4px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+  padding: 6px 6px;
+  float: center;
+    text-align: center;
+    background-image:
+      -moz-linear-gradient(
+        bottom, 
+        rgba(255, 255, 255, 0.25), 
+        rgba(0, 0, 0, 0.25)
+      ),
+      -moz-linear-gradient(
+        bottom, 
+        #f66, 
+        #a22
+      );
+  background-size: 100% 100%, 100% 100%;
+  font-family: "Impact", Impact, Monospace;
+}
+
+a.selecttablelink {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.selecttablelink:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.selecttablelink:hover {
+  color: #222;
+  text-decoration: none;
+}
+
+a.selecttablelink:active {
+  color: #222;
+  text-decoration: none;
+}
+
+a.selecttablelink:focus {
+  outline: 0;
+  color: #222;
+  text-decoration: none;
+}
   
   input[type=text],[type=password] {
     border: 0px;
