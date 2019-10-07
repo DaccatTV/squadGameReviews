@@ -10,16 +10,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { MoviepageComponent } from './moviepage/moviepage.component';
 import { BrowsepageComponent } from './browsepage/browsepage.component';
+import { GamespageComponent } from './gamespage/gamespage.component';
+import { CreatereviewComponent } from './createreview/createreview.component';
+import { ReviewComponent } from './review/review.component';
+import { RatereviewComponent } from './ratereview/ratereview.component';
+import { ConsoleComponent } from './console/console.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    MoviepageComponent,
-    BrowsepageComponent
+    BrowsepageComponent,
+    GamespageComponent,
+    CreatereviewComponent,
+    ReviewComponent,
+    RatereviewComponent,
+    ConsoleComponent
   ],
 
   imports: [AlertModule.forRoot(),
