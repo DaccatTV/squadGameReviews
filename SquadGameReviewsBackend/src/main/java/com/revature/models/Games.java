@@ -1,10 +1,17 @@
 package com.revature.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -30,25 +37,55 @@ public class Games {
 	@Column
 	private String esrb;
 	
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(
+		name="gamesjconsole", 
+		joinColumns = @JoinColumn(name="g_id"), 
+		inverseJoinColumns = @JoinColumn(name="c_id"))
+	private List<Console> consoles;
+	
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(
+		name="gamesjtags", 
+		joinColumns = @JoinColumn(name="g_id"), 
+		inverseJoinColumns = @JoinColumn(name="t_id"))
+	private List<Tags> tags;
+	
+	@OneToMany(mappedBy = "game")
+	private List<Reviews> reviews;
+	
+	@OneToMany(mappedBy = "forumgame")
+	private List<Forums> forumList;
+	
 	public Games() {
 		super();
 	}
 
-	public Games(int g_id, String gname, String overview, String publisher, String esrb) {
+	public Games(String gname, String overview, String publisher, String esrb, List<Console> consoles, List<Tags> tags,
+			List<Reviews> reviews, List<Forums> forumList) {
+		super();
+		this.gname = gname;
+		this.overview = overview;
+		this.publisher = publisher;
+		this.esrb = esrb;
+		this.consoles = consoles;
+		this.tags = tags;
+		this.reviews = reviews;
+		this.forumList = forumList;
+	}
+
+	public Games(int g_id, String gname, String overview, String publisher, String esrb, List<Console> consoles,
+			List<Tags> tags, List<Reviews> reviews, List<Forums> forumList) {
 		super();
 		this.g_id = g_id;
 		this.gname = gname;
 		this.overview = overview;
 		this.publisher = publisher;
 		this.esrb = esrb;
-	}
-
-	public Games(String gname, String overview, String publisher, String esrb) {
-		super();
-		this.gname = gname;
-		this.overview = overview;
-		this.publisher = publisher;
-		this.esrb = esrb;
+		this.consoles = consoles;
+		this.tags = tags;
+		this.reviews = reviews;
+		this.forumList = forumList;
 	}
 
 	public int getG_id() {
@@ -91,12 +128,45 @@ public class Games {
 		this.esrb = esrb;
 	}
 
+	public List<Console> getConsoles() {
+		return consoles;
+	}
+
+	public void setConsoles(List<Console> consoles) {
+		this.consoles = consoles;
+	}
+
+	public List<Tags> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;
+	}
+
+	public List<Reviews> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<Reviews> reviews) {
+		this.reviews = reviews;
+	}
+
+	public List<Forums> getForumList() {
+		return forumList;
+	}
+
+	public void setForumList(List<Forums> forumList) {
+		this.forumList = forumList;
+	}
+
 	@Override
 	public String toString() {
 		return "Games [g_id=" + g_id + ", gname=" + gname + ", overview=" + overview + ", publisher=" + publisher
-				+ ", esrb=" + esrb + "]";
+				+ ", esrb=" + esrb + ", consoles=" + consoles + ", tags=" + tags + ", reviews=" + reviews
+				+ ", forumList=" + forumList + "]";
 	}
-	
-	
 
+	
+	
 }

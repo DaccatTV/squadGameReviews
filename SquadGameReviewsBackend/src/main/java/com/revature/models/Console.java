@@ -1,10 +1,13 @@
 package com.revature.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -20,20 +23,25 @@ public class Console {
 	
 	@Column
 	private int c_name;
+	
+	@ManyToMany(mappedBy = "consoles")
+	private List<Games> games;
 
 	public Console() {
 		super();
 	}
 
-	public Console(int c_id, int c_name) {
+	public Console(int c_name, List<Games> games) {
+		super();
+		this.c_name = c_name;
+		this.games = games;
+	}
+
+	public Console(int c_id, int c_name, List<Games> games) {
 		super();
 		this.c_id = c_id;
 		this.c_name = c_name;
-	}
-
-	public Console(int c_name) {
-		super();
-		this.c_name = c_name;
+		this.games = games;
 	}
 
 	public int getC_id() {
@@ -52,13 +60,19 @@ public class Console {
 		this.c_name = c_name;
 	}
 
+	public List<Games> getGames() {
+		return games;
+	}
+
+	public void setGames(List<Games> games) {
+		this.games = games;
+	}
+
 	@Override
 	public String toString() {
-		return "Console [c_id=" + c_id + ", c_name=" + c_name + "]";
+		return "Console [c_id=" + c_id + ", c_name=" + c_name + ", games=" + games + "]";
 	}
-	
-	
-	
+
 	
 
 }

@@ -1,10 +1,15 @@
 package com.revature.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -33,11 +38,36 @@ public class Reviews {
 	@Column
 	private int score;
 	
+	@ManyToOne
+	@JoinColumn(name="fk_reviews_games")
+	private Games game;
+	
+	@ManyToOne
+	@JoinColumn(name="fk_reviews_accounts")
+	private Accounts account;
+	
+	@OneToMany(mappedBy="review")
+	private List<Ratings> ratings;
+	
 	public Reviews() {
 		super();
 	}
 
-	public Reviews(int r_id, String review, String title, int a_id, int g_id, int score) {
+	public Reviews(String review, String title, int a_id, int g_id, int score, Games game, Accounts account,
+			List<Ratings> ratings) {
+		super();
+		this.review = review;
+		this.title = title;
+		this.a_id = a_id;
+		this.g_id = g_id;
+		this.score = score;
+		this.game = game;
+		this.account = account;
+		this.ratings = ratings;
+	}
+
+	public Reviews(int r_id, String review, String title, int a_id, int g_id, int score, Games game, Accounts account,
+			List<Ratings> ratings) {
 		super();
 		this.r_id = r_id;
 		this.review = review;
@@ -45,15 +75,9 @@ public class Reviews {
 		this.a_id = a_id;
 		this.g_id = g_id;
 		this.score = score;
-	}
-
-	public Reviews(String review, String title, int a_id, int g_id, int score) {
-		super();
-		this.review = review;
-		this.title = title;
-		this.a_id = a_id;
-		this.g_id = g_id;
-		this.score = score;
+		this.game = game;
+		this.account = account;
+		this.ratings = ratings;
 	}
 
 	public int getR_id() {
@@ -104,12 +128,36 @@ public class Reviews {
 		this.score = score;
 	}
 
+	public Games getGame() {
+		return game;
+	}
+
+	public void setGame(Games game) {
+		this.game = game;
+	}
+
+	public Accounts getAccount() {
+		return account;
+	}
+
+	public void setAccount(Accounts account) {
+		this.account = account;
+	}
+
+	public List<Ratings> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<Ratings> ratings) {
+		this.ratings = ratings;
+	}
+
 	@Override
 	public String toString() {
 		return "Reviews [r_id=" + r_id + ", review=" + review + ", title=" + title + ", a_id=" + a_id + ", g_id=" + g_id
-				+ ", score=" + score + "]";
+				+ ", score=" + score + ", game=" + game + ", account=" + account + ", ratings=" + ratings + "]";
 	}
-	
+
 	
 
 }
