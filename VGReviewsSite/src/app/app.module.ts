@@ -8,14 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { BrowsepageComponent } from './browsepage/browsepage.component';
-import { GamespageComponent } from './gamespage/gamespage.component';
-import { CreatereviewComponent } from './createreview/createreview.component';
-import { ReviewComponent } from './review/review.component';
-import { RatereviewComponent } from './ratereview/ratereview.component';
-import { ConsoleComponent } from './console/console.component';
+import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
+import { BrowsepageComponent } from './component/browsepage/browsepage.component';
+import { GamespageComponent } from './component/gamespage/gamespage.component';
+import { CreatereviewComponent } from './component/createreview/createreview.component';
+import { ReviewComponent } from './component/review/review.component';
+import { RatereviewComponent } from './component/ratereview/ratereview.component';
+import { ConsoleComponent } from './component/console/console.component';
 
 @NgModule({
   declarations: [
