@@ -1,5 +1,5 @@
 <div class="logindiv">
-    <form action="" method="get" onSubmit="return checkLogin()">
+    <form novalidate>
         <table>
             <tr>
                 <td><label>Username:</label></td>
@@ -10,6 +10,6 @@
                 <td><input type="password" name="password" maxlength="20" [(ngModel)] = "rPassword"/></td>
             </tr>
         </table>
-        <input type="submit"/>
+        <input type="submit" (click)="checkLogin()"/>
     </form>
 </div>
