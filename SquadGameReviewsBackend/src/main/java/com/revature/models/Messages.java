@@ -2,7 +2,10 @@ package com.revature.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -10,6 +13,8 @@ import javax.persistence.Table;
 public class Messages {
 	
 	@Id
+	@SequenceGenerator(sequenceName="m_id_maker", name ="message_seq")
+	@GeneratedValue(generator="message_seq", strategy=GenerationType.SEQUENCE)
 	@Column
 	private int m_id;
 	

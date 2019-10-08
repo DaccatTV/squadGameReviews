@@ -2,7 +2,10 @@ package com.revature.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -10,6 +13,8 @@ import javax.persistence.Table;
 public class Forums {
 	
 	@Id
+	@SequenceGenerator(sequenceName="f_id_maker", name ="forum_seq")
+	@GeneratedValue(generator="forum_seq", strategy=GenerationType.SEQUENCE)
 	@Column
 	private int f_id;
 	
