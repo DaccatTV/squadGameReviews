@@ -17,8 +17,8 @@ export class MessagesService {
     return message;
   }
 
-  getMessage(m_id: number): Observable<Game>{
-    var game = this.http.get<Game>('http://localhost:8080/messages/' + m_id);
-    return game;
+  getMessage(m_id: number): Observable<Message>{
+    var message = this.http.get<Message>('http://localhost:8080/messages/' + m_id);
+    return message;
   }
 }
