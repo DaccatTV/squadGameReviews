@@ -1,1 +1,79 @@
-<p>gamespage works!</p>
+<head>
+    <title>Games!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+  <div class="container">
+    <h2>Games</h2>
+    <p>Everything that matters.</p>            
+    <table id="game_table" class="table table-hover">
+      <thead>
+        <tr>
+          <th>Game Title</th>
+          <th>Publisher</th>
+          <th>Overview</th>
+          <th>ESRB</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+      </tbody>
+    </table>
+  </div>
+  
+  </body>
+
+
+
+  <script>
+
+    function getGameData(){
+
+        var game_data;
+
+        xmlhttp = new XMLHttpRequest();
+    
+            xmlhttp.onreadystatechange = function() { 
+                if (this.readyState == 4 && this.status == 200) {//when a good response is given do this
+
+                    var data = JSON.parse(this.responseText); // convert the response to a json object
+                    append_json(data);// pass the json object to the append_json function
+                }
+            }
+            //set the request destination and type
+            xmlhttp.open("POST", "localhost:8080/games", true);
+            //set required headers for the request
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // send the request
+            xmlhttp.send();
+
+
+
+
+
+
+    }//end getGameData
+
+
+
+
+  
+  function append_json(data){
+            var table = document.getElementById('game_table');
+            data.forEach(function(object) {
+                var tr = document.createElement('tr');
+                tr.innerHTML = '<td>' + object.gname + '</td>' +
+                '<td>' + object.publisher + '</td>' +
+                '<td>' + object.overview + '</td>' +
+                '<td>' + object.esrb + '</td>';
+                table.appendChild(tr);
+            });
+        }//end append_json
+  
+  
+  </script>
