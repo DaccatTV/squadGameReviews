@@ -7,6 +7,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
   <body>
+
+ <button (click)="getAllGameData()">Load Data</button>
   
   <div class="container">
     <h2>Games</h2>
@@ -25,28 +27,36 @@
       </tbody>
     </table>
   </div>
+
   
   </body>
 
 
 
-  <script>
+
+
+  <!--
+    function testFunc(){
+        console.log("TEST");
+    }
 
     function getGameData(){
 
-        var game_data;
+    console.log("entering getGameData function");
 
         xmlhttp = new XMLHttpRequest();
     
             xmlhttp.onreadystatechange = function() { 
                 if (this.readyState == 4 && this.status == 200) {//when a good response is given do this
 
+                    console.log(this.responseText);
                     var data = JSON.parse(this.responseText); // convert the response to a json object
                     append_json(data);// pass the json object to the append_json function
+                   
                 }
             }
             //set the request destination and type
-            xmlhttp.open("POST", "localhost:8080/games", true);
+            xmlhttp.open("GET", "localhost:8080/games", true);
             //set required headers for the request
             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             // send the request
@@ -76,4 +86,4 @@
         }//end append_json
   
   
-  </script>
+    -->
