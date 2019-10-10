@@ -1,0 +1,23 @@
+div .consoletable {
+    border-radius: 4px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 6px;
+    float: center;
+      text-align: center;
+      background-image:
+        linear-gradient(to
+         bottom, 
+          rgba(255, 255, 255, 0.25), 
+          rgba(0, 0, 0, 0.25)
+        ),
+        linear-gradient(to
+          bottom, 
+          #888, 
+          #444
+        );
+    background-size: 100% 100%, 100% 100%;
+    /*font-family: "Impact", Impact, Monospace;*/
+    font-size: 125%;
+  }

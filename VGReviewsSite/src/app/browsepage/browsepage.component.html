@@ -1,1 +1,12 @@
-<p>browsepage works!</p>
+<div class="consoletable">
+    <table class="consoletable">
+        <tr>
+          <td><a class="selecttablelink" (click)="setPC()" routerLink="../console">PC</a></td>
+          <td><a class="selecttablelink" (click)="setSwitch()" routerLink="../console">Nintendo Switch</a></td>
+          <td><a class="selecttablelink" (click)="setPS4()" routerLink="../console">PlayStation 4</a></td>
+          <td><a class="selecttablelink" (click)="setXBOX()" routerLink="../console">XBOX One</a></td>
+          <td><a class="selecttablelink" (click)="setRetro()" routerLink="../console">Retro</a></td>
+        </tr>
+    </table>
+</div>
+<router-outlet name="games"></router-outlet>
