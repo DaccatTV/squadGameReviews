@@ -22,45 +22,6 @@ public class MessagesServiceImpl implements MessagesService{
 		return mr.findById(id).get();
 	}
 
-	@SuppressWarnings("null")
-	@Override
-	public List<Messages> getMessagesByFid(int fid) {
-		
-		List<Messages> messagesList = getAllMessages();
-		List<Messages> returnList = null;
-		
-		for(Messages element : messagesList) {
-			
-			if(fid == element.getF_id()){
-					
-				returnList.add(element);
-				
-			}
-				
-		}
-		
-		return null;
-	}
-
-	@SuppressWarnings("null")
-	@Override
-	public List<Messages> getMessagesByAid(int aid) {
-		List<Messages> messagesList = getAllMessages();
-		List<Messages> returnList = null;
-		
-		for(Messages element : messagesList) {
-			
-			if(aid == element.getF_id()){
-					
-				returnList.add(element);
-				
-			}
-				
-		}
-		
-		return null;
-	}
-
 	@Override
 	public List<Messages> getAllMessages() {
 		
@@ -91,6 +52,18 @@ public class MessagesServiceImpl implements MessagesService{
 		
 		mr.save(messages);
 		
+	}
+
+	@Override
+	public List<Messages> getMessagesByFid(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Messages> getMessagesByAid(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
