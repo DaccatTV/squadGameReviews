@@ -12,6 +12,7 @@ export class GamesService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(private http: HttpClient) {}
 
+  //not used in the GET, may need them for the POST.
   httpHeaders = new HttpHeaders({
 
 'Content-Type' : 'application/json',
@@ -19,7 +20,6 @@ export class GamesService {
 'Access-Control-Allow-Origin' : '*'
 
   });
-
 
   options = {
     headers: this.httpHeaders
