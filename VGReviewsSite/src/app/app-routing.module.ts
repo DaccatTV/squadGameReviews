@@ -10,7 +10,6 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'browsepage', component:BrowsepageComponent},
-  {path:'gamespage', component:GamespageComponent},
   {path : '', redirectTo : '/browsepage', pathMatch: 'full'}
 ];
 
