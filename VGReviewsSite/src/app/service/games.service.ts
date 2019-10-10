@@ -27,13 +27,13 @@ export class GamesService {
 
   
   getListGames(): Observable<Game[]> {
-    return this.http.get<Game[]>('http://localhost:8080/games');
+    return this.http.get<Game[]>('http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/games');
    // console.log(game);
    // return game;
   }
 
   getGame(g_id: number): Observable<Game>{
-    var game = this.http.get<Game>('http://localhost:8080/games/' + g_id);
+    var game = this.http.get<Game>('http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/games/' + g_id);
     return game;
   }
 
