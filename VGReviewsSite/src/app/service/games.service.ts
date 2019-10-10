@@ -12,12 +12,24 @@ export class GamesService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(private http: HttpClient) {}
 
+  httpHeaders = new HttpHeaders({
+
+'Content-Type' : 'application/json',
+'Cache-Control' : 'no-cache',
+'Access-Control-Allow-Origin' : '*'
+
+  });
+
+
+  options = {
+    headers: this.httpHeaders
+  }
 
   
-  list(): Observable<Game[]> {
-    var game= this.http.get<Game[]>('http://localhost:8080/games');
-    console.log(game);
-    return game;
+  getListGames(): Observable<Game[]> {
+    return this.http.get<Game[]>('http://localhost:8080/games');
+   // console.log(game);
+   // return game;
   }
 
   getGame(g_id: number): Observable<Game>{
