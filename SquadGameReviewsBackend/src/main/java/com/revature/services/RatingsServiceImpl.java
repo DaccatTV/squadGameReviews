@@ -3,10 +3,12 @@ package com.revature.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.revature.models.Ratings;
 import com.revature.repos.RatingsRepo;
 
+@Service
 public class RatingsServiceImpl implements RatingsService{
 
 	@Autowired

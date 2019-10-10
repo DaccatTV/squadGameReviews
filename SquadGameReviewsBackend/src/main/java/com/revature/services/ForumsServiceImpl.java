@@ -25,27 +25,6 @@ public class ForumsServiceImpl implements ForumsService{
 	
 	}
 
-	@SuppressWarnings("null")
-	@Override  //returns a List<Forums>
-	public List<Forums> getForumsByGameId(int g_id) {
-	
-		List<Forums> forumList = getAllForums();
-		List<Forums> returnList = null;
-		
-		for(Forums element : forumList) {
-			
-			if(g_id == element.getG_id()){
-					
-				returnList.add(element);
-			}
-				
-		}
-		
-		return returnList;
-
-		
-	}
-
 	@Override
 	public Forums getForumsByTitle(String title) {
 	List<Forums> forumList = getAllForums();
@@ -88,6 +67,12 @@ public class ForumsServiceImpl implements ForumsService{
 	@Override
 	public void createForums(Forums forums) {
 		fr.save(forums);
+	}
+
+	@Override
+	public List<Forums> getForumsByGameId(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
