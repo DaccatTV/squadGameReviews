@@ -16,11 +16,10 @@ Enter a game to search for:<br>
 <button (click) ="gameSearchByName()">Find that Game!</button>
 
 
-  
   <div class="container">
     <h2>Games</h2>
     <p>Everything that matters.</p>            
-    <table id="game_table" class="table table-hover">
+    <table style="color: white" id="game_table" class="table table-hover">
       <thead>
         <tr>
           <th>Game Title</th>
@@ -35,7 +34,24 @@ Enter a game to search for:<br>
     </table>
   </div>
 
+  <div class="container">
+    <h2>Reviews</h2>
+    <p>By the power of Greyskull</p>            
+    <table style="color: white" id="review_table" class="table table-hover">
+      <thead>
+        <tr>
+          <th>Review Title</th>
+          <th>Score</th>
+          <th>Review</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+      </tbody>
+    </table>
+  </div>
+
   
-  <!--</body>
+
  
-  <app-createreview></app-createreview>-->
+  <app-createreview></app-createreview>
