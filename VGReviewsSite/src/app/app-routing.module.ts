@@ -5,6 +5,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { BrowsepageComponent } from './component/browsepage/browsepage.component';
 import { GamespageComponent } from './component/gamespage/gamespage.component'
 import { CreatereviewComponent } from './component/createreview/createreview.component';
+import { ConsoleComponent } from './component/console/console.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'browsepage', component:BrowsepageComponent},
   {path:'gamespage', component:GamespageComponent},
   {path:'createreview', component:CreatereviewComponent},
+  {path:'console', component:ConsoleComponent},
   {path : '', redirectTo : '/browsepage', pathMatch: 'full'}
 ];
 
