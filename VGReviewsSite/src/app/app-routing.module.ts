@@ -4,6 +4,7 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { BrowsepageComponent } from './component/browsepage/browsepage.component';
 import { GamespageComponent } from './component/gamespage/gamespage.component'
+import { CreatereviewComponent } from './component/createreview/createreview.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'browsepage', component:BrowsepageComponent},
   {path:'gamespage', component:GamespageComponent},
+  {path:'createreview', component:CreatereviewComponent},
   {path : '', redirectTo : '/browsepage', pathMatch: 'full'}
 ];
 
