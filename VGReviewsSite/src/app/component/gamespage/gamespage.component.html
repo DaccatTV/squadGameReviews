@@ -8,7 +8,14 @@
   </head>
   <body>
 
- <button (click)="getAllGameData()">Load Data</button>
+ <!-- <button (click)="getAllGameData()">Load Data</button> -->
+
+
+Enter a game to search for:<br>
+<input type="text" id="gameSearchField" value="">
+<button (click) ="gameSearchByName()">Find that Game!</button>
+
+
   
   <div class="container">
     <h2>Games</h2>
@@ -30,3 +37,5 @@
 
   
   </body>
+ 
+  <app-createreview></app-createreview>
