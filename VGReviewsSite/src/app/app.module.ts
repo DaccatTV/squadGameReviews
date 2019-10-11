@@ -5,7 +5,6 @@ import { AlertModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { GameBrowseModule } from './browsepage/browserpage.module';
 
 
 import { AppComponent } from './app.component';
@@ -26,12 +25,13 @@ import { ConsoleComponent } from './component/console/console.component';
     BrowsepageComponent,
     CreatereviewComponent,
     ReviewComponent,
-    RatereviewComponent
+    RatereviewComponent,
+    GamespageComponent,
+    ConsoleComponent
   ],
 
   imports: [AlertModule.forRoot(),
     BrowserModule,
-    GameBrowseModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
