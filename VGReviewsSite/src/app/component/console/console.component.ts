@@ -19,13 +19,17 @@ export class ConsoleComponent implements OnInit {
 
   ngOnInit() {
     this.getConsoleList();
+    //this.getActiveConsole();
   }
+
+
 
   getConsoleList(){
     this.tempConsoleList.subscribe(
       (response) => {
         console.log(response);
         this.consoleList = response;
+        console.log(this.consoleList);
       },
       (response) => {
         console.log("Error loading console list.");
@@ -34,7 +38,14 @@ export class ConsoleComponent implements OnInit {
   }
 
   getActiveConsole(){
-    //TODO: Set the currentConsole using the session variable and the console list
+    var i;
+    for (i = 0; i < this.consoleList.length; i++) {
+      if(this.consoleList[i].cname == sessionStorage.getItem('console')){
+        this.currentConsole = this.consoleList[i];
+        console.log(this.currentConsole);
+        break;
+      }
+    } 
   }
 
 }
