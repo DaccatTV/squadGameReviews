@@ -1,9 +1,8 @@
-<button (click) = "getActiveConsole()">Get Console</button>
-<table>
+<table *ngIf="currentConsole != null">
     <tr>
         <th>Game Name</th>
     </tr>
-    <!--<tr *ngFor = "let gake of robotmodels; index as i;">
-
-    </tr>-->
+    <tr *ngFor = "let game of currentConsole.games; index as i;">
+        <td><input type="button" (click)="setActiveGame(game.gname)" value="{{game.gname}}" /></td>
+    </tr>
 </table>

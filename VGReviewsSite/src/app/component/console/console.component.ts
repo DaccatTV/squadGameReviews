@@ -19,16 +19,18 @@ export class ConsoleComponent implements OnInit {
 
   ngOnInit() {
     this.getConsoleList();
-    //this.getActiveConsole();
   }
 
-
+  //ngAfterContentChecked(){
+    //this.getActiveConsole();
+  //}
 
   getConsoleList(){
     this.tempConsoleList.subscribe(
       (response) => {
         console.log(response);
         this.consoleList = response;
+        this.getActiveConsole();
         console.log(this.consoleList);
       },
       (response) => {
@@ -38,6 +40,7 @@ export class ConsoleComponent implements OnInit {
   }
 
   getActiveConsole(){
+    //console.log("The active console is " + sessionStorage.getItem('console'));
     var i;
     for (i = 0; i < this.consoleList.length; i++) {
       if(this.consoleList[i].cname == sessionStorage.getItem('console')){
@@ -46,6 +49,11 @@ export class ConsoleComponent implements OnInit {
         break;
       }
     } 
+  }
+
+  setActiveGame(gamen: string){
+    sessionStorage.setItem('game', gamen);
+    //console.log(gamen);
   }
 
 }
