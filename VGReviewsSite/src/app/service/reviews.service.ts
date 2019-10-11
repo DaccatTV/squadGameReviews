@@ -22,14 +22,14 @@ export class ReviewsService {
     return this.http.post<any>("http://localhost:8080/reviews", rev, this.options);
   }
 
-  list(): Observable<Review[]> {
+  listReviews(): Observable<Review[]> {
     var review= this.http.get<Review[]>('http://localhost:8080/reviews');
     console.log(review);
     return review;
   }
 
   getReview(r_id: number): Observable<Review>{
-    var review = this.http.get<Review>('http://localhost:8080/messages/' + r_id);
+    var review = this.http.get<Review>('http://localhost:8080/reviews/' + r_id);
     return review;
   }
 }

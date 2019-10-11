@@ -17,20 +17,20 @@ body {
     padding: 6px 6px;
     text-align: center;
     background-image:
-      -moz-linear-gradient(
+      linear-gradient(
         135deg, 
         transparent 33%, 
         rgba(0, 0, 0, 0.1) 33%, 
         rgba(0, 0, 0, 0.1) 66%, 
         transparent 66% 
       ),
-      -moz-linear-gradient(
-        top, 
+      linear-gradient(to
+        bottom, 
         rgba(255, 255, 255, 0.25), 
         rgba(0, 0, 0, 0.25)
       ),
-      -moz-linear-gradient(
-        bottom, 
+      linear-gradient(to
+        top, 
         #a22, 
         #f66
       );
@@ -57,7 +57,7 @@ h1.logo {
         #ccc, 
         #aaa
       );
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   position:relative;
   z-index: 2;
@@ -79,18 +79,19 @@ div .selecttable {
   float: center;
     text-align: center;
     background-image:
-      -moz-linear-gradient(
-        bottom, 
+    linear-gradient(to
+        top, 
         rgba(255, 255, 255, 0.25), 
         rgba(0, 0, 0, 0.25)
       ),
-      -moz-linear-gradient(
-        bottom, 
+      linear-gradient(to
+        top, 
         #f66, 
         #a22
       );
   background-size: 100% 100%, 100% 100%;
   font-family: "Impact", Impact, Monospace;
+  font-size: 150%;
 }
 
 a.selecttablelink {

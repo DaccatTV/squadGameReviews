@@ -19,14 +19,14 @@ export class CreatereviewComponent implements OnInit {
     g_id : number;
     score : number;
   submitReview(){
-    this.reviews.addReview(new Review(this.r_id,this.review,this.title,this.a_id,this.g_id,this.score)).subscribe(
-    (response) => {
+    //this.reviews.addReview(new Review(this.r_id,this.review,this.title,this.a_id,this.g_id,this.score)).subscribe(
+    /*(response) => {
       console.log(response);
     },
     (response) => {
       console.log("Failed.");
     }
-  );
+  );*/
 }
 
 }
