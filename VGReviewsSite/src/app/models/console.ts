@@ -6,10 +6,6 @@ export class Console{
     cname: string;
     games: Game[];
 
-
-
-
-
     constructor(c_id:number, cname:string, games:Game[]){
 
         this.c_id = c_id;
@@ -17,6 +13,5 @@ export class Console{
         this.games = games;
         
     }
-
 
 }
