@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConsolesService } from 'src/app/service/consoles.service'
 import { Observable } from 'rxjs';
 import { Console } from 'src/app/models/console';
+import { Game } from 'src/app/models/game';
 
 @Component({
   selector: 'app-console',
@@ -51,8 +52,9 @@ export class ConsoleComponent implements OnInit {
     } 
   }
 
-  setActiveGame(gamen: string){
-    sessionStorage.setItem('game', gamen);
+  setActiveGame(gameg: Game){
+    sessionStorage.setItem('game', gameg.gname);
+    sessionStorage.setItem('gameid', gameg.g_id.toString());
     //console.log(gamen);
   }
 

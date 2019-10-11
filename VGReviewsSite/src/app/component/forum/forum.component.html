@@ -1,0 +1,9 @@
+<p *ngIf="forumList == null">There are no forums for this title.</p>
+<table *ngIf="forumList != null">
+    <tr>
+        <th>Forums:</th>
+    </tr>
+    <tr *ngFor = "let forum of forumList; index as i;">
+        <td><input type="button" value="{{forum.title}}"/></td>
+    </tr>
+</table>

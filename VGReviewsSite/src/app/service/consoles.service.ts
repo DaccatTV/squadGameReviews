@@ -29,7 +29,7 @@ export class ConsolesService {
   }
 
   getForum(c_id: number): Observable<Console>{
-    var consoles = this.http.get<Console>('http://localhost:8080/consoles/' + c_id);
+    var consoles = this.http.get<Console>('http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/consoles/' + c_id);
     return consoles;
   }
 
