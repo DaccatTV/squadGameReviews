@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ConsoleService } from 'src/app/service/console.service'
+import { ConsolesService } from 'src/app/service/consoles.service'
 import { Observable } from 'rxjs';
-import { console } from 'src/app/model/console';
+import { Console } from 'src/app/models/console';
 
 @Component({
   selector: 'app-console',
@@ -10,11 +10,11 @@ import { console } from 'src/app/model/console';
 })
 export class ConsoleComponent implements OnInit {
 
-  constructor(private consoles: ConsoleService) { }
+  constructor(private consoles: ConsolesService) { }
 
-  tempConsoleList: Observable<console[]> = this.consoles.list();
-  consoleList: console[];
-  currentConsole: console;
+  tempConsoleList: Observable<Console[]> = this.consoles.list();
+  consoleList: Console[];
+  currentConsole: Console;
 
 
   ngOnInit() {
