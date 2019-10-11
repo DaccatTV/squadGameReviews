@@ -40,7 +40,7 @@ export class BrowsepageComponent implements OnInit {
         break;
       case "switch":
         console.log("switch");
-        sessionStorage.setItem('console', "Switch");
+        sessionStorage.setItem('console', "Nintendo Switch");
         break;
       case "ps4":
         console.log("ps4");
@@ -52,7 +52,7 @@ export class BrowsepageComponent implements OnInit {
         break;
       default:
         console.log("other");
-        sessionStorage.setItem('console', "other");
+        sessionStorage.setItem('console', "Retro");
         // code block
     } 
   }
