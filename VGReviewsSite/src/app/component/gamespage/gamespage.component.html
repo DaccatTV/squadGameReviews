@@ -10,15 +10,9 @@
 
  <!-- <button (click)="getAllGameData()">Load Data</button> -->
 
-
-Enter a game to search for:<br>
-<input type="text" id="gameSearchField" value="">
-<button (click) ="gameSearchByName()">Find that Game!</button>
-
-
   <div class="container">
-    <h2>Games</h2>
-    <p>Everything that matters.</p>            
+    <!--<h2>Games</h2>
+    <p>Everything that matters.</p>   -->         
     <table style="color: white" id="game_table" class="table table-hover">
       <thead>
         <tr>
@@ -35,7 +29,7 @@ Enter a game to search for:<br>
   </div>
 
   <div class="container">
-    <h2>Reviews</h2>
+    <h3>Reviews</h3>
     <p>By the power of Greyskull</p>            
     <table style="color: white" id="review_table" class="table table-hover">
       <thead>
@@ -50,8 +44,5 @@ Enter a game to search for:<br>
       </tbody>
     </table>
   </div>
-
-  
-
- 
+  <br/>
   <app-createreview></app-createreview>

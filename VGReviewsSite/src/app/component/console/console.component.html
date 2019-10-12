@@ -1,8 +1,14 @@
+Enter a game to search for:<br/>
+<input type="text" id="gameSearchField" value="">
+<input type="button" routerLink="../gamespage" (click) ="gameSearchByName()"value="Find that Game!"/>
+
+<p>OR select a game from the list below!</p>
+
 <table *ngIf="currentConsole != null">
     <tr>
         <th>Game Name</th>
     </tr>
     <tr *ngFor = "let game of currentConsole.games; index as i;">
-        <td><input type="button" (click)="setActiveGame(game.gname)" value="{{game.gname}}" /></td>
+        <td><input type="button" routerLink="../gamespage" (click)="setActiveGame(game)" value="{{game.gname}}" /></td>
     </tr>
 </table>
