@@ -17,6 +17,7 @@ export class ReviewComponent implements OnInit {
     rating : number;
     author : string;
     review : string;
+    
 
   viewReviews(){
     this.reviews.listReviews().subscribe(
