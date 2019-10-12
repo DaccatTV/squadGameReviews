@@ -1,6 +1,3 @@
-import { Review } from './review';
-import { Message } from './message';
-
 export class Account {
 
     a_id :number;
@@ -8,14 +5,12 @@ export class Account {
     pass :string;
     status :number;
 
-    constructor(a_id:number,username:string,password:string,status:number) {
-
+    constructor(a_id:number,username:string,pass:string,status:number) {
 
         this.a_id = a_id;
         this.username = username;
-        this.pass = password;
+        this.pass = pass;
         this.status = status;
-       
 
     }
 
