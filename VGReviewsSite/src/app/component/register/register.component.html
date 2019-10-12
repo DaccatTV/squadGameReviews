@@ -1,4 +1,4 @@
-<form action="" method="post" onSubmit="return checkRegister()">
+<form>
     <table>
         <tr>
             <td><label>Username:</label></td>
@@ -13,5 +13,5 @@
             <td><input type="password" name="confirmpass" maxlength="20" [(ngModel)] = "rConfirmPassword"/></td>
         </tr>
     </table>
-    <input type="submit"/>
+    <input type="button" (click)="check()" value="Submit"/>
 </form>
