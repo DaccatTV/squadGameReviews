@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { ConsolesService } from 'src/app/service/consoles.service'
 import { Observable } from 'rxjs';
 import { Console } from 'src/app/models/console';
@@ -51,11 +51,24 @@ export class ConsoleComponent implements OnInit {
       }
     } 
   }
-
+  
   setActiveGame(gameg: Game){
+    console.log("This is the game object")
+    console.log(gameg);
     sessionStorage.setItem('game', gameg.gname);
     sessionStorage.setItem('gameid', gameg.g_id.toString());
-    //console.log(gamen);
+    //window.location.href="/gamespage";
+  }
+
+  gameSearchByName(){
+    // @ts-ignore
+    var name = document.getElementById('gameSearchField').value;
+    for( var i=0; i<this.currentConsole.games.length; i++){
+      if(name.toUpperCase() === this.currentConsole.games[i].gname.toUpperCase()){
+        sessionStorage.setItem('game', this.currentConsole.games[i].gname);
+        sessionStorage.setItem('gameid', this.currentConsole.games[i].g_id.toString());
+      }
+    }
   }
 
 }

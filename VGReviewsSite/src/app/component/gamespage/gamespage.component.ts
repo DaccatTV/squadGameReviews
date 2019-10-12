@@ -13,7 +13,7 @@ export class GamespageComponent implements OnInit {
   constructor(private gameService : GamesService) { }
 
   ngOnInit() {
-
+    this.gameSearchByName();
   }
 
   allGames : Observable<Game[]> = this.gameService.getListGames();
@@ -56,7 +56,8 @@ gameSearchByName(){
 //this error is fine. Ignore it. Compiles fine. Typescript being dumb.
 // It reads the ignore. It MUST be commented out to work. 
 // @ts-ignore
- var name = document.getElementById('gameSearchField').value;
+ //var name = document.getElementById('gameSearchField').value;
+ var name = sessionStorage.getItem('game');
 
  let current_game;
 
