@@ -3,21 +3,18 @@ import { Message } from './message';
 
 export class Account {
 
-    id :number;
+    a_id :number;
     username :string;
-    password :string;
+    pass :string;
     status :number;
-    reviews :Review[];
-    messages :Message[];
 
-    constructor(id:number,username:string,password:string,status:number,reviews:Review[],messages:Message[]) {
+    constructor(a_id:number,username:string,password:string,status:number) {
 
-        this.id = id;
+        this.a_id = a_id;
         this.username = username;
-        this.password = password;
+        this.pass = password;
         this.status = status;
-        this.reviews = reviews;
-        this.messages = messages;
+       
 
     }
 

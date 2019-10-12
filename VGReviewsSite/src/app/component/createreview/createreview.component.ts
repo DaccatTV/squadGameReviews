@@ -39,13 +39,13 @@ export class CreatereviewComponent implements OnInit {
     var game_idstring = sessionStorage.getItem('gameObj');
     var useraccountstring = sessionStorage.getItem('userObj');
 
-    var account = JSON.parse(useraccountstring);
-    var game = JSON.parse(game_idstring);
+    this.account = JSON.parse(useraccountstring);
+    this.game = JSON.parse(game_idstring);
 
     console.log("getting vals, boss");
     
-    console.log(account);
-    console.log(game);
+    console.log(this.account);
+    console.log(this.game);
     console.log("done getting the vals");
 
   this.reviews.addReview(new Review(this.r_id, this.review,this.title,this.score,this.ratings,this.account,this.game)).subscribe(
