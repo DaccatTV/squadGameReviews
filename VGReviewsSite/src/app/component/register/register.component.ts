@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     }else if (this.rPassword != this.rConfirmPassword) {
       //return false;
     }else{
-      this.account = new Account(-69420, this.rUsername, this.rPassword, 0, null, null);
+      this.account = new Account(-69420, this.rUsername, this.rPassword, 0);
       //this.account.username=this.rUsername;
       //this.account.password=this.rPassword;
       //this.account.status=0;
