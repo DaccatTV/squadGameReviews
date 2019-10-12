@@ -30,6 +30,11 @@ public class Tags {
 	public Tags() {
 		super();
 	}
+	
+	public Tags(int t_id) {
+		super();
+		this.t_id = t_id;
+	}
 
 	public Tags(String tname, List<Games> games) {
 		super();
@@ -72,7 +77,5 @@ public class Tags {
 	public String toString() {
 		return "Tags [t_id=" + t_id + ", tname=" + tname + ", games=" + games + "]";
 	}
-	
-	
 	
 }

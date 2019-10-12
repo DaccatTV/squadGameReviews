@@ -2,6 +2,7 @@ package com.revature.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="forums")
@@ -34,16 +36,25 @@ public class Forums {
 	@Column
 	private int sticky;
 	
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.MERGE })
 	@JoinColumn(name="g_id")
-	@JsonIgnore
+	@JsonBackReference(value="forums")
 	private Games forumgame;
 
 	@OneToMany(mappedBy = "forum")
+	@JsonManagedReference
 	private List<Messages> messages;
 	
 	public Forums() {
 		super();
+	}
+
+	public Forums(String title, String posttime, int sticky, Games forumgame) {
+		super();
+		this.title = title;
+		this.posttime = posttime;
+		this.sticky = sticky;
+		this.forumgame = forumgame;
 	}
 
 	public Forums(String title, String posttime, int sticky, Games forumgame, List<Messages> messages) {

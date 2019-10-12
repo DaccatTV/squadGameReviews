@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,7 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="games")
@@ -40,32 +40,44 @@ public class Games {
 	@Column
 	private String esrb;
 	
-	@ManyToMany(cascade = { CascadeType.ALL })
+	@ManyToMany(cascade = { CascadeType.MERGE })
 	@JoinTable(
 		name="gamesjconsoles", 
 		joinColumns = { @JoinColumn(name="g_id") }, 
 		inverseJoinColumns = { @JoinColumn(name="c_id") }
 	)
-	@JsonIgnore
+	@JsonBackReference
 	private List<Console> console;
 	
-	@ManyToMany(cascade = { CascadeType.ALL })
+	@ManyToMany(cascade = { CascadeType.MERGE })
 	@JoinTable(
 		name="gamesjtags", 
 		joinColumns = {@JoinColumn(name="g_id")}, 
 		inverseJoinColumns = {@JoinColumn(name="t_id")}
 	)
-	@JsonIgnore
+	@JsonBackReference(value="tags")
 	private List<Tags> tags;
 	
 	@OneToMany(mappedBy = "game")
+	@JsonManagedReference
 	private List<Reviews> reviews;
 	
 	@OneToMany(mappedBy = "forumgame")
+	@JsonManagedReference(value="forums")
 	private List<Forums> forumList;
 
 	public Games() {
 		super();
+	}
+	
+	public Games(String gname, String overview, String publisher, String esrb, List<Console> console, List<Tags> tags) {
+		super();
+		this.gname = gname;
+		this.overview = overview;
+		this.publisher = publisher;
+		this.esrb = esrb;
+		this.console = console;
+		this.tags = tags;
 	}
 
 	public Games(String gname, String overview, String publisher, String esrb, List<Console> console, List<Tags> tags,
@@ -173,7 +185,5 @@ public class Games {
 				+ ", esrb=" + esrb + ", console=" + console + ", tags=" + tags + ", reviews=" + reviews + ", forumList="
 				+ forumList + "]";
 	}
-
-	
 	
 }

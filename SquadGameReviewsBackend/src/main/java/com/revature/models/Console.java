@@ -30,6 +30,11 @@ public class Console {
 	public Console() {
 		super();
 	}
+	
+	public Console(int c_id, String cname) {
+		super();
+		this.c_id = c_id;
+	}
 
 	public Console(String cname, List<Games> games) {
 		super();
@@ -73,6 +78,4 @@ public class Console {
 		return "Console [c_id=" + c_id + ", cname=" + cname + ", games=" + games + "]";
 	}
 
-	
-	
 }
