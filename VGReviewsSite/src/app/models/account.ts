@@ -10,6 +10,7 @@ export class Account {
 
     constructor(a_id:number,username:string,password:string,status:number) {
 
+
         this.a_id = a_id;
         this.username = username;
         this.pass = password;
