@@ -32,6 +32,8 @@ export class LoginComponent implements OnInit {
 
     this.account = this.accounts.getAccount(this.rUsername);
 
+  
+
     if(this.account == null){
       console.log("Account Null");
     }else{
@@ -40,6 +42,9 @@ export class LoginComponent implements OnInit {
         (response) => {
           console.log(response);
           this.account = response;
+          sessionStorage.setItem("userObj", JSON.stringify(this.account));
+          console.log(sessionStorage.getItem("userObj"));
+         
         },
         (response) => {
           console.log("ERROR");
@@ -50,9 +55,15 @@ export class LoginComponent implements OnInit {
           this.account==null;
           return false;
         }
-
+          //possibly unreachable
         sessionStorage.setItem('username', this.rUsername);
         sessionStorage.setItem('password', this.rPassword);
+        sessionStorage.setItem("userID", this.account.a_id);
+        sessionStorage.setItem("status", this.account.status);
+        sessionStorage.setItem("userObj", this.account);
+        console.log(sessionStorage.getItem("userObj"));
+
+        
 
     }
 

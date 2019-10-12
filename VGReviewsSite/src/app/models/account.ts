@@ -7,17 +7,15 @@ export class Account {
     username :string;
     pass :string;
     status :number;
-    reviews :Review[];
-    messages :Message[];
 
-    constructor(id:number,username:string,password:string,status:number,reviews:Review[],messages:Message[]) {
+    constructor(a_id:number,username:string,password:string,status:number) {
 
-        this.a_id = id;
+
+        this.a_id = a_id;
         this.username = username;
         this.pass = password;
         this.status = status;
-        this.reviews = reviews;
-        this.messages = messages;
+       
 
     }
 
