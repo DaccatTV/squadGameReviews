@@ -48,7 +48,7 @@ export class BrowsepageComponent implements OnInit {
         break;
       case "xbox one":
         console.log("xbox one");
-        sessionStorage.setItem('console', "XBOX One");
+        sessionStorage.setItem('console', "Xbox One");
         break;
       default:
         console.log("other");
