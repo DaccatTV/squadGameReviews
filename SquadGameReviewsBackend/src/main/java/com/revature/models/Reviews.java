@@ -2,6 +2,7 @@ package com.revature.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="reviews")
@@ -34,21 +36,30 @@ public class Reviews {
 	@Column
 	private int score;
 	
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.MERGE })
 	@JoinColumn(name="g_id")
-	@JsonIgnore
+	@JsonBackReference
 	private Games game;
 	
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.MERGE })
 	@JoinColumn(name="a_id")
-	@JsonIgnore
 	private Accounts account;
 	
 	@OneToMany(mappedBy="review")
+	@JsonManagedReference(value="ratings")
 	private List<Ratings> ratings;
 	
 	public Reviews() {
 		super();
+	}
+	
+	public Reviews(String review, String title, int score, Games game, Accounts account) {
+		super();
+		this.review = review;
+		this.title = title;
+		this.score = score;
+		this.game = game;
+		this.account = account;
 	}
 
 	public Reviews(String review, String title, int score, Games game, Accounts account, List<Ratings> ratings) {
@@ -134,7 +145,5 @@ public class Reviews {
 		return "Reviews [r_id=" + r_id + ", review=" + review + ", title=" + title + ", score=" + score + ", game="
 				+ game + ", account=" + account + ", ratings=" + ratings + "]";
 	}
-
-	
 
 }
