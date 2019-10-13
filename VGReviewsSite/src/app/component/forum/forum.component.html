@@ -1,9 +1,13 @@
-<p *ngIf="forumList == null">There are no forums for this title.</p>
-<table *ngIf="forumList != null">
-    <tr>
-        <th>Forums:</th>
-    </tr>
-    <tr *ngFor = "let forum of forumList; index as i;">
-        <td><input type="button" value="{{forum.title}}"/></td>
-    </tr>
-</table>
+<p>If this game has no topics, create one using the form below!</p>
+<div class="container">
+    <table style="color: white" class="table table-hover">
+        <tr>
+            <th>Forums:</th>
+        </tr>
+        <tr *ngFor = "let forum of forumList; index as i;">
+            <td>{{forumList[i].title}}</td>
+            <td>{{forumList[i].posttime}}</td>
+            <td><a class="selecttablelink" routerLink="../browsepage">Click here for comments</a></td>
+        </tr>
+    </table>
+</div>
