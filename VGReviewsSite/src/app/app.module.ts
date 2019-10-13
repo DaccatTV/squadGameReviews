@@ -19,6 +19,7 @@ import { ConsoleComponent } from './component/console/console.component';
 import { ForumComponent } from './component/forum/forum.component';
 import { AdminaccountlistComponent } from './component/adminaccountlist/adminaccountlist.component';
 import { MessageboardComponent } from './component/messageboard/messageboard.component';
+import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MessageboardComponent } from './component/messageboard/messageboard.com
     ConsoleComponent,
     ForumComponent,
     AdminaccountlistComponent,
-    MessageboardComponent
+    MessageboardComponent,
+    AdminaddgameComponent
   ],
 
   imports: [AlertModule.forRoot(),

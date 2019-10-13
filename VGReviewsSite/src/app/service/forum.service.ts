@@ -25,4 +25,9 @@ export class ForumService {
   list(): Observable<Forum[]> {
     return this.http.get<Forum[]>('http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/forums');
   }
+
+  addForum(forum: Forum): Observable<any> {
+    return this.http.post<any>("http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/forums", forum, this.options);
+  }
+
 }
