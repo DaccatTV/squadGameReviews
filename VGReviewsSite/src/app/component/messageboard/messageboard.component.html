@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>{{forumObj.title}}</h1>
+    <table style="color: white" class="table table-hover">
+        <tr>
+            <th>Messages:</th>
+        </tr>
+        <tr>
+            <th>Comment</th>
+            <th>Time of Post</th>
+            <th>Author</th>
+        </tr>
+        <tr *ngFor = "let message of messageList; index as i;">
+            <td>{{messageList[i].message}}</td>
+            <td>{{messageList[i].posttime}}</td>
+            <td>{{messageList[i].messageAccount.username}}</td>
+        </tr>
+    </table>
+    <a routerLink="../gamespage">Return to Game Page</a>
+</div>

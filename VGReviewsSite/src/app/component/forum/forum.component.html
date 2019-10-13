@@ -1,5 +1,7 @@
-<p>If this game has no topics, create one using the form below!</p>
+<br>
+
 <div class="container">
+    <p>If this game has no topics, create one using the form below!</p>
     <table style="color: white" class="table table-hover">
         <tr>
             <th>Forums:</th>
@@ -7,7 +9,7 @@
         <tr *ngFor = "let forum of forumList; index as i;">
             <td>{{forumList[i].title}}</td>
             <td>{{forumList[i].posttime}}</td>
-            <td><a class="selecttablelink" routerLink="../browsepage">Click here for comments</a></td>
+            <td><a (click)="storeSessionForum(i)" routerLink="../messageboard">Click here for comments</a></td>
         </tr>
     </table>
 </div>
