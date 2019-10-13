@@ -7,10 +7,10 @@ export class Forum{
     title: string;
     posttime: string;
     sticky: number;
-    forumgame : Game[];
+    forumgame : Game;
     messages: Message[];
 
-    constructor(f_id:number,title:string,posttime:string,sticky:number,messages:Message[], forumgame:Game[]){
+    constructor(f_id:number,title:string,posttime:string,sticky:number,messages:Message[], forumgame:Game){
 
         this.f_id = f_id;
         this.title = title;
