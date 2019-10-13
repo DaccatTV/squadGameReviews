@@ -17,6 +17,7 @@ import { ReviewComponent } from './component/review/review.component';
 import { RatereviewComponent } from './component/ratereview/ratereview.component';
 import { ConsoleComponent } from './component/console/console.component';
 import { ForumComponent } from './component/forum/forum.component';
+import { AdminaccountlistComponent } from './component/adminaccountlist/adminaccountlist.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ForumComponent } from './component/forum/forum.component';
     RatereviewComponent,
     GamespageComponent,
     ConsoleComponent,
-    ForumComponent
+    ForumComponent,
+    AdminaccountlistComponent
   ],
 
   imports: [AlertModule.forRoot(),
