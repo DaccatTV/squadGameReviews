@@ -8,6 +8,7 @@ import { CreatereviewComponent } from './component/createreview/createreview.com
 import { ConsoleComponent } from './component/console/console.component';
 import { AdminaccountlistComponent } from './component/adminaccountlist/adminaccountlist.component';
 import { MessageboardComponent } from './component/messageboard/messageboard.component';
+import { ReviewComponent } from './component/review/review.component';
 import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.component';
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'accounts', component:AdminaccountlistComponent},
   {path:'addgame', component:AdminaddgameComponent},
   {path: 'messageboard', component:MessageboardComponent},
+  {path:'review', component:ReviewComponent},
   {path : '', redirectTo : '/browsepage', pathMatch: 'full'}
 ];
 
