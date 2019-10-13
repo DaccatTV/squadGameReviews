@@ -15,11 +15,17 @@ export class ForumComponent implements OnInit {
   forumList: Forum[];
   gameObj: Game;
   gameObjString: string;
+  selectedForum: Forum;
 
   ngOnInit() {
     this.gameObjString = sessionStorage.getItem('gameObj');
     this.gameObj = JSON.parse(this.gameObjString);
     this.forumList = this.gameObj.forumList;
+  }
+
+  storeSessionForum(i: number){
+    this.selectedForum = this.forumList[i];
+    sessionStorage.setItem("forumObj", JSON.stringify(this.selectedForum));
   }
 
 }
