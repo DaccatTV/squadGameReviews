@@ -1,6 +1,7 @@
 import { Review } from './review';
 import { Forum } from './forum';
 import { Tag } from './tag';
+import { Console } from './console';
 
 export class Game{
 
