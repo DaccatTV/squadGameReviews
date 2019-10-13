@@ -45,6 +45,14 @@ getAllGameData(){
   )
 }; //ends get all game data
 
+storeReviewData(review){
+
+    console.log("store review data method");
+  sessionStorage.setItem('reviewObj', JSON.stringify(review));
+
+
+}
+
 
 
 //Search for a game by it's name.
@@ -104,13 +112,14 @@ gameSearchByName(){
               tr.innerHTML = 
               '<td>' + orbject.title + '</td>' +
               '<td>' + orbject.review + '</td>' +
-              '<td>' + orbject.score + '</td>';
+              '<td>' + orbject.score + '</td>' +
+              '<button onclick="storeReviewData(orbject)">Click me</button>';;
               kable.appendChild(tr);
           });
 
           //==================================
-
-
+            //'<button onclick="storeReviewData(orbject)">'+orbject.score+'</button>';
+          //<td><a (click)="storeReviewData(orbject)" routerLink="../reviews">Click Here to Rate!</a></td>
 
           }//end if
 
