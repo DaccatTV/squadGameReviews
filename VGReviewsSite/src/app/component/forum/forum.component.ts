@@ -19,7 +19,6 @@ export class ForumComponent implements OnInit {
   selectedForum: Forum;
   title: string;
   newForum: Forum;
-  date: Date;
   dateString: string;
 
   ngOnInit() {
@@ -36,7 +35,7 @@ export class ForumComponent implements OnInit {
   submitForm(){
     this.newForum = new Forum(null, null, null, null, null, null);
     this.newForum.title = this.title;
-    this.dateString = ((new Date().getMonth() + 1).toString() + "/" + new Date().getDate().toString() + "/" + new Date().getFullYear().toString())
+    this.dateString = ((new Date().getMonth() + 1).toString() + "/" + new Date().getDate().toString() + "/" + new Date().getFullYear().toString());
     this.newForum.posttime = this.dateString;
     this.newForum.sticky = 0;
     this.newForum.messages = [];
