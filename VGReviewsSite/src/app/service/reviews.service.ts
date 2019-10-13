@@ -19,7 +19,7 @@ export class ReviewsService {
     headers: this.httpHeaders
   }
   addReview(rev :Review) :Observable<any>{
-    return this.http.post<any>("http://localhost:8080/reviews", rev, this.options);
+    return this.http.post<any>("http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/reviews", rev, this.options);
   }
 
   listReviews(): Observable<Review[]> {

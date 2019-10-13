@@ -57,6 +57,7 @@ export class ConsoleComponent implements OnInit {
     console.log(gameg);
     sessionStorage.setItem('game', gameg.gname);
     sessionStorage.setItem('gameid', gameg.g_id.toString());
+    sessionStorage.setItem('gameObj', JSON.stringify(gameg));
     //window.location.href="/gamespage";
   }
 
