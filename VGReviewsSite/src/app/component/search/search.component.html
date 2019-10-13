@@ -1,0 +1,64 @@
+Enter a game to search for:<br/>
+<input type="text" id="gameSearchField" value="">
+<input type="button" routerLink="../searchlist" (click) ="gameSearchByName()"value="Search"/>
+<br/>
+Advanced Search Options:
+<br/>
+<table>
+    <tr>
+        <td> Search by Tags: </td>
+        <td> Search by Publisher: </td>
+        <td> Search by Rating: </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" [(ngModel)] = "tagsearch"></td>
+        <td><input type="checkbox" [(ngModel)] = "publishersearch"></td>
+        <td><input type="checkbox" [(ngModel)] = "ratingsearch"></td>
+    </tr>
+</table>
+<br/>
+<table *ngIf="tagsearch">
+    <tr>
+        <th>Tags:</th>
+    </tr>
+    <tr *ngFor = "let tag of tagsForReview; index as i;">
+            <td>{{tag.tname}}</td>
+            <td><input type="button" (click)="removeTag(i)" value="Remove"/></td>
+    </tr>
+    <tr>
+        <td>
+            <div class="selectdiv">
+                <label>
+                    <select id="tagselector">
+                        <option *ngFor = "let tag of tagList; index as i;" value="{{i}}">{{tag.tname}}</option>
+                    </select> 
+                 </label>
+            </div>
+        </td>
+        <td><input type="button" (click)="addTag('tagselector')" value="Add Tag"/></td>
+</table>
+<table *ngIf="publishersearch">
+    <tr>
+        <th>Publisher:</th><td><input type="text" name="publisher" [(ngModel)] = "rPublisher"/></td>
+    </tr>
+</table>
+<table *ngIf="ratingsearch">
+    <tr>
+        <th>Rating:</th>
+    </tr>
+    <tr>
+        <td>
+            <div class="selectdiv">
+                <label>
+                    <select id="ESRBselector" [(ngModel)] = "rRating">
+                        <option value="E for Everyone">E for Everyone</option>
+                        <option value="E10 for Ages 10 and up">E10 for Ages 10 and up</option>
+                        <option value="T for Teen">T for Teen</option>
+                        <option value="M for Mature">M for Mature</option>
+                        <option value="AO for Adults Only">AO for Adults Only</option>
+                    </select> 
+                </label>
+            </div>
+        </td>
+    </tr>
+</table>

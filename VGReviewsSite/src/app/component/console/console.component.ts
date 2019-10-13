@@ -61,15 +61,4 @@ export class ConsoleComponent implements OnInit {
     //window.location.href="/gamespage";
   }
 
-  gameSearchByName(){
-    // @ts-ignore
-    var name = document.getElementById('gameSearchField').value;
-    for( var i=0; i<this.currentConsole.games.length; i++){
-      if(name.toUpperCase() === this.currentConsole.games[i].gname.toUpperCase()){
-        sessionStorage.setItem('game', this.currentConsole.games[i].gname);
-        sessionStorage.setItem('gameid', this.currentConsole.games[i].g_id.toString());
-      }
-    }
-  }
-
 }
