@@ -1,0 +1,73 @@
+<form>
+    <table>
+        <tr>
+            <td><label>Game Name:</label></td>
+            <td><input type="text" name="username" [(ngModel)] = "rGameName"/></td>
+        </tr>
+        <tr>
+            <td><label>Game Overview:</label></td>
+            <td><input type="text" name="username" [(ngModel)] = "rGameOverview"/></td>
+        </tr>
+        <tr>
+            <td><label>Publisher:</label></td>
+            <td><input type="text" name="username" [(ngModel)] = "rGamePublisher"/></td>
+        </tr>
+        <tr>
+            <td><label>ESRB:</label></td>
+            <td>
+                <div class="selectdiv">
+                    <label>
+                        <select id="ESRBselector">
+                            <option value="E for Everyone">E for Everyone</option>
+                            <option value="E10 for Ages 10 and up">E10 for Ages 10 and up</option>
+                            <option value="T for Teen">T for Teen</option>
+                            <option value="M for Mature">M for Mature</option>
+                            <option value="AO for Adults Only">AO for Adults Only</option>
+                        </select> 
+                    </label>
+              </div>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Console(s):</label></td>
+            <!--<td><input type="text" name="username" [(ngModel)] = "rUsername"/></td>-->
+        </tr>
+        <tr *ngFor = "let console of consolesForGame; index as i;">
+            <td>{{console.cname}}</td>
+            <td><input type="button" (click)="removeConsole(i)" value="Remove"/></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="selectdiv">
+                    <label>
+                        <select id="consoleselector">
+                            <option *ngFor = "let console of consoleList; index as i;" value="{{i}}">{{console.cname}}</option>
+                        </select> 
+                    </label>
+              </div>
+            </td>
+            <td><input type="button" (click)="addConsole('consoleselector')" value="Add Console"/></td>
+        </tr>
+        <tr>
+            <td><label>Tag(s):</label></td>
+            <!--<td><input type="text" name="username" [(ngModel)] = "rUsername"/></td>-->
+        </tr>
+        <tr *ngFor = "let tag of tagsForGame; index as i;">
+                <td>{{tag.tname}}</td>
+                <td><input type="button" (click)="removeTag(i)" value="Remove"/></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="selectdiv">
+                    <label>
+                        <select id="tagselector">
+                            <option *ngFor = "let tag of tagList; index as i;" value="{{i}}">{{tag.tname}}</option>
+                        </select> 
+                     </label>
+                </div>
+            </td>
+            <td><input type="button" (click)="addTag('tagselector')" value="Add Tag"/></td>
+        </tr>
+    </table>
+    <input type="button" (click)="submitGame()" routerLink="../browsepage" value="Submit"/>
+</form>

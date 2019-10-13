@@ -21,6 +21,7 @@ import { AdminaccountlistComponent } from './component/adminaccountlist/adminacc
 import { MessageboardComponent } from './component/messageboard/messageboard.component';
 import { SearchComponent } from './component/search/search.component';
 import { SearchlistComponent } from './component/searchlist/searchlist.component';
+import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SearchlistComponent } from './component/searchlist/searchlist.component
     MessageboardComponent,
     SearchComponent,
     SearchlistComponent
+    AdminaddgameComponent
   ],
 
   imports: [AlertModule.forRoot(),

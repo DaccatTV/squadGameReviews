@@ -30,4 +30,8 @@ export class ForumService {
     return this.http.post<any>("http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/forums", forum, this.options);
   }
 
+  deleteForum(forum: Forum): Observable<any> {
+    return this.http.delete<any>("http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/forums/delete/" + forum.f_id, this.options);
+  }
+
 }

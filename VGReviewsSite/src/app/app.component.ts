@@ -11,7 +11,9 @@ export class AppComponent implements OnInit {
   }
   title = 'VGReviewsSite';
   //currentAccount = JSON.parse(sessionStorage.getItem("userObj"));
-
+  logout(){
+    sessionStorage.clear();
+  }
   getStatus(){
     var temp = sessionStorage.getItem("userObj");
     if(temp!=null){

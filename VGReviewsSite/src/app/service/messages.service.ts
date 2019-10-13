@@ -37,4 +37,8 @@ export class MessagesService {
     return this.http.post<any>("http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/messages", message, this.options);
   }
 
+  deleteMessage(message: Message): Observable<any> {
+    return this.http.delete<any>("http://ec2-18-222-186-152.us-east-2.compute.amazonaws.com:7117/messages/delete/" + message.m_id, this.options);
+  }
+
 }

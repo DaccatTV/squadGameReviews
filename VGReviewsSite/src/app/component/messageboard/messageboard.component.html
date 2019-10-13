@@ -13,10 +13,11 @@
             <td>{{messageList[i].message}}</td>
             <td>{{messageList[i].posttime}}</td>
             <td>{{messageList[i].messageAccount.username}}</td>
+            <td *ngIf="getStatus()>1"><a (click)="deleteMessage(i)" routerLink="../browsepage">Delete this message</a></td>
         </tr>
     </table>
     <input id='mess' type="text" [(ngModel)]="message">
-    <button (click)="submitMessage()" routerLink="../browsepage">Submit</button>
+    <button (click)="submitMessage()" routerLink="../browsepage" *ngIf="getStatus()>-1">Submit</button>
     <br>
     <a routerLink="../gamespage">Return to Game Page</a>
     <br>
