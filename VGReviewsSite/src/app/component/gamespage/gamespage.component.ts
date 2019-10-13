@@ -50,8 +50,13 @@ getAllGameData(){
 //Search for a game by it's name.
 gameSearchByName(){
 
-  document.getElementById('game_table').innerHTML = "";
-  document.getElementById('review_table').innerHTML = "";
+  document.getElementById('game_table').innerHTML = '<td>' + "Game Title" + '</td>' +
+  '<td>' + "Publisher" + '</td>' +
+  '<td>' + "Overview" + '</td>' +
+  '<td>' + "ESRB" + '</td>';
+  document.getElementById('review_table').innerHTML = '<td>' + "Title" + '</td>' +
+  '<td>' + "Review" + '</td>' +
+  '<td>' + "Score" + '</td>';
 
 //this error is fine. Ignore it. Compiles fine. Typescript being dumb.
 // It reads the ignore. It MUST be commented out to work. 
@@ -83,6 +88,8 @@ gameSearchByName(){
            // console.log("entering if statement");
 
             var tr = document.createElement('tr');
+            
+
                     tr.innerHTML = '<td>' + object.gname + '</td>' +
                     '<td>' + object.publisher + '</td>' +
                     '<td>' + object.overview + '</td>' +
