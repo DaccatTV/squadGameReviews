@@ -20,6 +20,7 @@ export class MessageboardComponent implements OnInit {
   date: Date;
   dateString: string;
   account: Account;
+  selectedMessage: Message;
 
   ngOnInit() {
     this.forumObjString = sessionStorage.getItem("forumObj");
@@ -49,6 +50,28 @@ export class MessageboardComponent implements OnInit {
       }
     )
 
+  }
+
+  deleteMessage(i: number){
+    this.selectedMessage = this.messageList[i];
+    this.messageservice.deleteMessage(this.selectedMessage).subscribe(
+      (response) => {
+        console.log("success!");
+      },
+      (response) => {
+        console.log("failure...");
+      }
+    );
+  }
+
+  getStatus(){
+    var temp = sessionStorage.getItem("userObj");
+    if(temp!=null){
+
+    console.log(JSON.parse(temp).status);
+    return JSON.parse(temp).status;
+    }
+    return null;
   }
 
 }
