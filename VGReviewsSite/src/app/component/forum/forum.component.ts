@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from 'src/app/service/games.service'
-import { Observable } from 'rxjs';
 import { Forum } from 'src/app/models/forum';
 import { Game } from 'src/app/models/game';
 
@@ -13,25 +12,14 @@ export class ForumComponent implements OnInit {
 
   constructor(private games: GamesService) { }
 
-  tempGame: Observable<Game> = this.games.getGame(Number(sessionStorage.getItem('gameid')));
   forumList: Forum[];
+  gameObj: Game;
+  gameObjString: string;
 
   ngOnInit() {
-  }
-
-  getForums(){
-    //sessionStorage.getItem('gameid')
-    this.tempGame.subscribe(
-      (response) => {
-        console.log(response);
-        this.forumList = response.forumList;
-        //this.getActiveConsole();
-        console.log(this.forumList);
-      },
-      (response) => {
-        console.log("Error loading forums.");
-      }
-    )
+    this.gameObjString = sessionStorage.getItem('gameObj');
+    this.gameObj = JSON.parse(this.gameObjString);
+    this.forumList = this.gameObj.forumList;
   }
 
 }
