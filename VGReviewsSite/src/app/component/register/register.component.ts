@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
     if (this.rPassword != this.rConfirmPassword) {
       return false;
     }
+    
   }
 
 }

@@ -1,0 +1,25 @@
+<p>User Accounts:</p>
+<br/>
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Status</th>
+    </tr>
+    <!--   let game of currentConsole.games; index as i;   account.status   -->
+    <tr *ngFor = "let account of accountList; index as i;">
+        <td>{{account.username}}</td>
+        <td>{{getStatus(account.status)}}</td>
+        <td *ngIf="username != accountList[i].username"><div class="selectdiv">
+            <label>
+              <select id="selector{{i}}">
+                <option value="0">User</option>
+                <option value="1">Reviewer</option>
+                <option value="2">Moderator</option>
+                <option value="3">Administrator</option>
+                <option value="-1">Banned</option>
+              </select> 
+            </label>
+          </div></td>
+        <td><input type="button" *ngIf="username != accountList[i].username" (click) ="updateUser(i)"value="Update User"/></td>
+    </tr>
+</table>
