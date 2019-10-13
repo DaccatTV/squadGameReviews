@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesService } from 'src/app/service/games.service'
 import { Forum } from 'src/app/models/forum';
 import { Game } from 'src/app/models/game';
 import { ForumService } from 'src/app/service/forum.service';
@@ -50,6 +49,28 @@ export class ForumComponent implements OnInit {
       }
     ) 
    
+  }
+
+  deleteTopic(i: number){
+    this.selectedForum = this.forumList[i];
+    this.forumservice.deleteForum(this.selectedForum).subscribe(
+      (response) => {
+        console.log("success!");
+      },
+      (response) => {
+        console.log("failure...");
+      }
+    );
+  }
+
+  getStatus(){
+    var temp = sessionStorage.getItem("userObj");
+    if(temp!=null){
+
+    console.log(JSON.parse(temp).status);
+    return JSON.parse(temp).status;
+    }
+    return null;
   }
 
 }
