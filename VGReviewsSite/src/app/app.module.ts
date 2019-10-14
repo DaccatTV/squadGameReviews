@@ -22,6 +22,7 @@ import { MessageboardComponent } from './component/messageboard/messageboard.com
 import { SearchComponent } from './component/search/search.component';
 import { SearchlistComponent } from './component/searchlist/searchlist.component';
 import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.component';
+import { NewgamespageComponent } from './component/newgamespage/newgamespage.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.com
     ForumComponent,
     AdminaccountlistComponent,
     MessageboardComponent,
+    NewgamespageComponent,
     SearchComponent,
     SearchlistComponent,
     AdminaddgameComponent

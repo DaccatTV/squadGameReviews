@@ -5,6 +5,6 @@
         <th>Game Name</th>
     </tr>
     <tr *ngFor = "let game of currentConsole.games; index as i;">
-        <td><input type="button" routerLink="../gamespage" (click)="setActiveGame(game)" value="{{game.gname}}" /></td>
+        <td><input type="button" routerLink="../newgamespage" (click)="setActiveGame(game)" value="{{game.gname}}" /></td>
     </tr>
 </table>

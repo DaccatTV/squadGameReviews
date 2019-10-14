@@ -45,4 +45,15 @@ export class RatereviewComponent implements OnInit {
     }
   );
   }
+
+  getStatus(){
+    var temp = sessionStorage.getItem("userObj");
+    if(temp!=null){
+
+    console.log(JSON.parse(temp).status);
+    return JSON.parse(temp).status;
+    }
+    return null;
+  }
+
 }
