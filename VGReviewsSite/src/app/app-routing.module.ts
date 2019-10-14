@@ -8,6 +8,8 @@ import { CreatereviewComponent } from './component/createreview/createreview.com
 import { ConsoleComponent } from './component/console/console.component';
 import { AdminaccountlistComponent } from './component/adminaccountlist/adminaccountlist.component';
 import { MessageboardComponent } from './component/messageboard/messageboard.component';
+import { SearchComponent } from './component/search/search.component';
+import { SearchlistComponent } from './component/searchlist/searchlist.component';
 import { ReviewComponent } from './component/review/review.component';
 import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.component';
 import { NewgamespageComponent } from './component/newgamespage/newgamespage.component';
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'browsepage', component:BrowsepageComponent},
+  {path:'search', component:SearchComponent},
+  {path:'searchlist', component:SearchlistComponent},
   {path:'gamespage', component:GamespageComponent},
   {path:'createreview', component:CreatereviewComponent},
   {path:'console', component:ConsoleComponent},

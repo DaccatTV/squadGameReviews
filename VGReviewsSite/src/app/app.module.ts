@@ -19,6 +19,8 @@ import { ConsoleComponent } from './component/console/console.component';
 import { ForumComponent } from './component/forum/forum.component';
 import { AdminaccountlistComponent } from './component/adminaccountlist/adminaccountlist.component';
 import { MessageboardComponent } from './component/messageboard/messageboard.component';
+import { SearchComponent } from './component/search/search.component';
+import { SearchlistComponent } from './component/searchlist/searchlist.component';
 import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.component';
 import { NewgamespageComponent } from './component/newgamespage/newgamespage.component';
 
@@ -36,8 +38,10 @@ import { NewgamespageComponent } from './component/newgamespage/newgamespage.com
     ForumComponent,
     AdminaccountlistComponent,
     MessageboardComponent,
-    AdminaddgameComponent,
-    NewgamespageComponent
+    NewgamespageComponent,
+    SearchComponent,
+    SearchlistComponent,
+    AdminaddgameComponent
   ],
 
   imports: [AlertModule.forRoot(),

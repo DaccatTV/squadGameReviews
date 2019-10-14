@@ -1,0 +1,7 @@
+<p *ngIf = "gamesForList.length == 0">No results found.</p>
+<p *ngIf = "gamesForList.length > 0">{{gamesForList.length}} results found.</p>
+<table>
+    <tr *ngFor = "let game of gamesForList; index as i;">
+        <td><input type="button" routerLink="../gamespage" (click)="setActiveGame(game)" value="{{game.gname}}" /></td>
+    </tr>
+</table>
