@@ -9,14 +9,12 @@
             <th>Title</th>
             <th>Score</th>
             <th>Author</th>
-            <th>Review Rating</th>
             <th>In-Depth Review</th>
         </tr>
         <tr *ngFor = "let review of reviewList; index as i;">
             <td>{{reviewList[i].title}}</td>
             <td>{{reviewList[i].score}}</td>
             <td>{{reviewList[i].account.username}}</td>
-            <td>{{calcAverageRating(reviewList[i])}}</td>
             <td><a (click)="storeSessionReview(i)" routerLink="../review">Read and Rate!</a></td>
             <td *ngIf="getStatus() == 3"><a (click)="deleteReview(i)" routerLink="../browsepage">Delete this review</a></td>
         </tr>

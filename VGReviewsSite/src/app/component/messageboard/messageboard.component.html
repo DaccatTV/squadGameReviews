@@ -17,8 +17,8 @@
         </tr>
     </table>
     <input id='mess' type="text" [(ngModel)]="message">
-    <button (click)="submitMessage()" routerLink="../browsepage" *ngIf="getStatus()>-1">Submit</button>
+    <button *ngIf="getStatus() != null" (click)="submitMessage()" routerLink="../browsepage">Submit</button>
     <br>
-    <a routerLink="../gamespage">Return to Game Page</a>
+    <a routerLink="../newgamespage">Return to Game Page</a>
     <br>
 </div>
