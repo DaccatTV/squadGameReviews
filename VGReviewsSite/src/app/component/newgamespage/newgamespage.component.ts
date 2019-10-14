@@ -16,6 +16,7 @@ export class NewgamespageComponent implements OnInit {
   reviewList: Review[];
   selectedReview: Review;
   averageRating: number;
+  review: Review;
 
   ngOnInit() {
     
@@ -39,6 +40,15 @@ export class NewgamespageComponent implements OnInit {
         console.log("failure...");
       }
     );
+  }
+
+  getReviewStatus(i: number) {
+    this.review = this.reviewList[i];
+    if(this.review.account.status == 1){
+      return 1;
+    } else {
+      return 9;
+    }
   }
 
   getStatus(){
