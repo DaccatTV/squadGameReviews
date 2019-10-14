@@ -120,15 +120,40 @@ a.selecttablelink:focus {
   text-decoration: none;
 }
   
-  input[type=text],[type=password] {
+  input[type=text],[type=password],[type=number] {
+    border: 0px;
+    border-radius: 4px;
+    background-color: #666;
+    color: #ffffff
+  }
+
+  textarea {
     border: 0px;
     border-radius: 4px;
     background-color: #666;
     color: #ffffff
   }
   
-  input[type=text]:focus,[type=password]:focus {
+  input[type=text]:focus,[type=password]:focus,[type=number]:focus {
     background-color: #f66;
+  }
+
+  textarea:focus {
+    background-color: #f66;
+  }
+
+  /*For Firefox*/
+  input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+  }
+
+  /*For Chrome*/
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
   }
   
   /*select {
@@ -197,10 +222,26 @@ a.selecttablelink:focus {
     cursor: pointer;
     border-radius: 4px;
   }
+
+  button {
+    background-color: #a66;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
   
   input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
     background-color: #F66;
   }
+
+  button:hover {
+    background-color: #F66;
+  }
+
   input::-moz-focus-inner { 
     outline: 0;
     background-color: #F66;
@@ -211,4 +252,35 @@ a.selecttablelink:focus {
     border: 10;
     border-color: #AAF
   }
+  button:focus, button:active{
+    outline: 0;
+    background-color: #F66;
+    border: 10;
+    border-color: #AAF
+  }
+
+  a {
+    color: #f66;
+    text-decoration: none;
+  }
   
+  a:visited {
+    color: #a66;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  a:active {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  a:focus {
+    outline: 0;
+    color: #fff;
+    text-decoration: none;
+  }
