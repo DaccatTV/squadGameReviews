@@ -1,2 +1,5 @@
-<p>RATE THIS REVIEW</p>
-<p>Rating: <input id ="rating" type="number" max="5" min="0"/></p>
+<div class="container">
+    <p>RATE THIS REVIEW</p>
+    <p>Rating: <input id ="rating" type="number" max="5" min="0"/></p>
+    <button (click)="addRating()" routerLink="../browsepage" *ngIf="getStatus()>-1">Submit</button>
+</div>

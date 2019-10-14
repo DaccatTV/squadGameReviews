@@ -20,6 +20,7 @@ import { ForumComponent } from './component/forum/forum.component';
 import { AdminaccountlistComponent } from './component/adminaccountlist/adminaccountlist.component';
 import { MessageboardComponent } from './component/messageboard/messageboard.component';
 import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.component';
+import { NewgamespageComponent } from './component/newgamespage/newgamespage.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.com
     ForumComponent,
     AdminaccountlistComponent,
     MessageboardComponent,
-    AdminaddgameComponent
+    AdminaddgameComponent,
+    NewgamespageComponent
   ],
 
   imports: [AlertModule.forRoot(),

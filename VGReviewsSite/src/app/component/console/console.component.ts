@@ -53,8 +53,6 @@ export class ConsoleComponent implements OnInit {
   }
   
   setActiveGame(gameg: Game){
-    console.log("This is the game object")
-    console.log(gameg);
     sessionStorage.setItem('game', gameg.gname);
     sessionStorage.setItem('gameid', gameg.g_id.toString());
     sessionStorage.setItem('gameObj', JSON.stringify(gameg));

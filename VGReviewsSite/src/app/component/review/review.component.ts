@@ -30,15 +30,4 @@ export class ReviewComponent implements OnInit {
     author : string;
     review : string;
 
-  viewReviews(){
-    this.reviews.listReviews().subscribe(
-      (response)=>{
-        console.log(response);
-      },
-      (response)=>{
-        console.log("Error");
-      }
-    );
-  }
-
 }
