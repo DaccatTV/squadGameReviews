@@ -20,6 +20,13 @@ export class ReviewComponent implements OnInit {
     this.ratings = this.reviewObj.ratings;
     this.review = this.reviewObj.review;
     this.author = this.reviewObj.account.username;
+    this.rating = 2.5;
+    if(this.ratings.length != 0){
+      for(let entry of this.ratings){
+        this.rating += entry.rating;
+      }
+      this.rating = this.rating/this.ratings.length;
+      }
     }
   }
     reviewObj:Review;

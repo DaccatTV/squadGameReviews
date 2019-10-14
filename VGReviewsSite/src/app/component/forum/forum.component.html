@@ -15,5 +15,5 @@
     </table>
     <h4>Enter a forum topic to start a discussion about this game!</h4>
     <input id='submission' type="text" [(ngModel)]="title">
-    <button (click)="submitForm()" routerLink="../browsepage">Submit</button>
+    <button *ngIf="getStatus() != null" (click)="submitForm()" routerLink="../browsepage">Submit</button>
 </div>

@@ -41,16 +41,6 @@ export class NewgamespageComponent implements OnInit {
     );
   }
 
-  calcAverageRating(review: Review){
-    if(review.ratings.length != 0){
-      this.averageRating = 0;
-      for(let rating of review.ratings){
-        this.averageRating += rating.rating;
-      }
-      this.averageRating = this.averageRating/review.ratings.length;
-    }
-  }
-
   getStatus(){
     var temp = sessionStorage.getItem("userObj");
     if(temp!=null){
