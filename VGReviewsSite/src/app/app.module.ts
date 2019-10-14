@@ -38,7 +38,7 @@ import { AdminaddgameComponent } from './component/adminaddgame/adminaddgame.com
     AdminaccountlistComponent,
     MessageboardComponent,
     SearchComponent,
-    SearchlistComponent
+    SearchlistComponent,
     AdminaddgameComponent
   ],
 
